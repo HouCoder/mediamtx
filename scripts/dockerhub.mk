@@ -10,7 +10,7 @@ export DOCKERFILE_DOCKERHUB
 
 define DOCKERFILE_DOCKERHUB_FFMPEG
 FROM $(ALPINE_IMAGE)
-RUN apk add --no-cache ffmpeg
+RUN apk add --no-cache ffmpeg tzdata
 ARG TARGETPLATFORM
 ADD tmp/binaries/$$TARGETPLATFORM.tar.gz /
 ENTRYPOINT [ "/mediamtx" ]
